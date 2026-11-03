@@ -1,0 +1,288 @@
+/* The Roster: navy ground, sparkle field, holographic card deck.
+ * Everything here is decorative 3D/foil that BoardUI's semantic tokens
+ * don't cover. Component layout still uses tokens in deck.tsx. */
+
+:root {
+  --roster-navy: #070a1a;
+  --roster-glow: #1b2250;
+  --roster-gold: #e8c547;
+  --roster-face: linear-gradient(160deg, #171c3a, #0b0e22 60%, #141838);
+  --roster-back: linear-gradient(160deg, #111535, #0a0d1f);
+}
+
+/* Site-wide dark ground. The theme is always dark; see app/layout.tsx. */
+.dark {
+  --color-background-full: var(--roster-navy);
+  --color-background-secondary-default: #0b1026;
+  --color-background-primary-default: #10152b;
+  --color-background-tertiary-default: #171d38;
+  --color-border-button-default: rgba(255, 255, 255, 0.12);
+  --color-separator-border: rgba(255, 255, 255, 0.09);
+  --color-border-table: rgba(255, 255, 255, 0.09);
+}
+.dark body {
+  background: radial-gradient(1200px 700px at 50% -10%, var(--roster-glow) 0%, var(--roster-navy) 60%);
+}
+
+/* Display type for headings only; body stays Inter. */
+.roster-display {
+  font-family: var(--font-display), var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+.roster-hero-title {
+  background: linear-gradient(180deg, #fff 30%, #a9b4ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Sparkles */
+.roster-stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.roster-stars i {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  animation: roster-tw var(--d) ease-in-out infinite;
+  animation-delay: var(--o);
+}
+@keyframes roster-tw {
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  50% { opacity: 0.9; transform: scale(1.4); }
+}
+
+/* Deck */
+.roster-deck {
+  position: relative;
+  height: 500px;
+  perspective: 1600px;
+}
+.roster-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  height: 290px;
+  margin: -145px 0 0 -100px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  transform-style: preserve-3d;
+  --rx: 0deg; --ry: 0deg; --fan: 0deg; --x: 0px; --y: 0px; --flip: 0deg;
+  transform: translate(var(--x), var(--y)) rotate(var(--fan)) rotateX(var(--rx)) rotateY(calc(var(--ry) + var(--flip)));
+  transition: transform 0.7s cubic-bezier(0.2, 0.9, 0.25, 1);
+  transition-delay: var(--delay);
+  outline: none;
+}
+.roster-card.is-dealt { transition-delay: var(--delay); }
+.roster-card.is-live { transition: transform 0.08s linear; transition-delay: 0s; }
+.roster-card.is-open { --flip: 180deg; }
+.roster-card:hover { z-index: 20; }
+.roster-card:focus-visible .roster-front { box-shadow: 0 0 0 3px var(--color-border-focus-ring); }
+
+.roster-face {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border-radius: 14px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: var(--roster-face);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.9), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.roster-back {
+  transform: rotateY(180deg);
+  background: var(--roster-back);
+}
+.roster-stripe {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 4px;
+  background: var(--c);
+}
+.roster-top {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  font-family: var(--font-display), var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--roster-gold);
+}
+.roster-top span + span { color: var(--color-text-tertiary); }
+.roster-logo {
+  position: absolute;
+  left: 0; right: 0; top: 64px;
+  height: 140px;
+  display: grid;
+  place-items: center;
+  padding: 0 22px;
+}
+.roster-logo::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--c) 0%, transparent 70%);
+  opacity: 0.35;
+  filter: blur(10px);
+}
+.roster-logo img {
+  position: relative;
+  max-width: 100%;
+  max-height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7));
+}
+.roster-name {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
+}
+.roster-name b {
+  display: block;
+  font-family: var(--font-display), var(--font-sans);
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+.roster-name small {
+  display: block;
+  color: var(--color-text-tertiary);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Card back: tag, title, role. The full story renders under the deck, so
+ * nothing here can overflow. */
+.roster-backin {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 18px;
+  text-align: center;
+}
+.roster-backin small {
+  font-family: var(--font-display), var(--font-sans);
+  color: var(--roster-gold);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.roster-backin b {
+  font-family: var(--font-display), var(--font-sans);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #fff;
+}
+.roster-backin span {
+  color: var(--color-text-tertiary);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Foil */
+.roster-holo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: color-dodge;
+  opacity: 0.14;
+  transition: opacity 0.3s;
+  background: linear-gradient(115deg, transparent 20%, rgba(255, 0, 128, 0.5) 36%, rgba(0, 255, 255, 0.5) 46%, rgba(255, 230, 0, 0.5) 54%, rgba(0, 128, 255, 0.5) 64%, transparent 80%);
+  background-size: 300% 300%;
+  background-position: var(--hx, 50%) var(--hy, 50%);
+  filter: saturate(1.4);
+}
+.roster-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--hx, 50%) var(--hy, 50%), rgba(255, 255, 255, 0.35), transparent 45%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.roster-card:hover .roster-holo, .roster-card.is-live .roster-holo { opacity: 0.6; }
+.roster-card.is-open .roster-holo { opacity: 0.22; }
+.roster-card:hover .roster-glare, .roster-card.is-live .roster-glare { opacity: 0.7; }
+
+/* Story under the deck */
+.roster-story {
+  min-height: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+.roster-story.is-on { opacity: 1; transform: none; }
+.roster-tag {
+  font-family: var(--font-display), var(--font-sans);
+  color: var(--roster-gold);
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.roster-title {
+  font-family: var(--font-display), var(--font-sans);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .roster-deck {
+    height: auto;
+    perspective: none;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 10px 0 20px;
+    scroll-snap-type: x mandatory;
+  }
+  .roster-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0;
+    flex: 0 0 200px;
+    scroll-snap-align: center;
+    transform: rotateY(var(--flip)) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .roster-stars i { animation: none; }
+  .roster-card { transition: none; }
+}

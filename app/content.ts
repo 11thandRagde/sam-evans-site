@@ -10,12 +10,11 @@ export const site = {
 };
 
 export const stats = [
-  { label: "Payments moved to athletes", value: 500, prefix: "$", suffix: "M+" },
-  { label: "Athletes on the app", value: 250, suffix: "K+" },
-  { label: "Photos tagged", value: 200, suffix: "M+" },
-  { label: "Athletic programs", value: 200, suffix: "+" },
-  { label: "Marketplaces on the API", value: 10 },
-  { label: "Years shipping", value: 7 },
+  { label: "Payments processed", value: 500, prefix: "$", suffix: "M+" },
+  { label: "Users on products I built", value: 250, suffix: "K+" },
+  { label: "Organizations served", value: 200, suffix: "+" },
+  { label: "External integrations shipped", value: 10 },
+  { label: "Years building", value: 7 },
 ];
 
 export type LineupKey = "a3" | "ncaa" | "nascar" | "teamworks" | "influencer" | "gm" | "liftflow";
@@ -43,7 +42,7 @@ export const lineup: {
     tag: "$500M+ moved",
     title: "Teamworks",
     story:
-      "As the only PM on payments, I built the product line that moved $500M+ to athletes through Stripe, PayPal, and the Teamworks Wallet, including international student-athlete payouts. I also shipped Ask Teamworks, the AI assistant, and moved the Influencer app into the unified Teamworks app.",
+      "Built the payments product line that moved $500M+ to athletes across Stripe, PayPal, and a white-labeled payment system, including international student-athlete payouts. Also shipped Ask Teamworks and moved the Influencer app into the unified Teamworks app.",
   },
   {
     key: "influencer",
@@ -92,21 +91,7 @@ export const lineup: {
     tag: "Every driver",
     title: "NASCAR Driver Incentive Program",
     story:
-      "I pitched NASCAR a custom engagement leaderboard, then worked directly with their team from requirements through alpha and beta. Every NASCAR driver and their business managers ended up using it to track engagements and get paid, a program that ran for five years.",
-  },
-  {
-    key: "a3",
-    accent: "#DC2626",
-    pos: "Agency",
-    name: "A3 Athletics",
-    logo: "/logos/a3.png",
-    logoOnDark: true,
-    wide: true,
-    tag: "Where it started",
-    title: "Allegiant Athletic Agency",
-    // TODO(Sam): replace with your own two or three sentences.
-    story:
-      "Allegiant Athletic Agency, a Tennessee sports agency representing NFL and NBA players, now Legacy Sports Agency. Story to come.",
+      "Forward-deployed with NASCAR's team for five years. Pitched a custom engagement leaderboard and owned it from requirements through alpha and beta until every driver and their business managers were using it to track engagements and get paid.",
   },
   {
     key: "liftflow",
@@ -120,6 +105,20 @@ export const lineup: {
     story:
       "Service management software for independent elevator maintenance companies: contracts, dispatch, mobile field logging, quotes, invoicing, and a customer portal, with QuickBooks and Stripe underneath. I co-founded it and run product and engineering. The first customer trial is live with a California elevator company.",
   },
+  {
+    key: "a3",
+    accent: "#DC2626",
+    pos: "Agency",
+    name: "A3 Athletics",
+    logo: "/logos/a3.png",
+    logoOnDark: true,
+    wide: true,
+    tag: "Summer 2017",
+    title: "Allegiant Athletic Agency",
+    // TODO(Sam): replace with your own two or three sentences.
+    story:
+      "Marketing intern at A3, a Knoxville sports agency representing NFL players and golfers. Cold-reached hundreds of brands over two weeks to land roughly $30K in athlete partnerships, some paid in product, and helped run events like Dwayne Harris's youth football camp and Eric Berry's L5 Foundation BBQ Challenge. First look at how athletes, brands, and money actually fit together.",
+  },
 ];
 
 export const work = [
@@ -127,13 +126,13 @@ export const work = [
     name: "Teamworks payments",
     result: "$500M+",
     detail: "processed through Stripe, PayPal, and Teamworks Wallet",
-    how: "Only PM from the first transfer to a mature product line: instant payouts, international student-athlete payments, KYC handled by Stripe. Negotiated processor terms and built the workflows that catch flagged payouts, failed KYC, and chargebacks before they turn into support tickets.",
+    how: "Owned payments from the first transfer to a mature product line, built across Stripe, PayPal, and a white-labeled payment system: instant payouts, international student-athlete payments, and KYC that scaled without adding headcount. Negotiated processor terms and built the workflows that catch flagged payouts, failed KYC, and chargebacks before they turn into support tickets.",
   },
   {
     name: "NASCAR Driver Incentive Program",
     result: "Every driver",
     detail: "five-year program",
-    how: "Pitched and built a custom engagement leaderboard with NASCAR's team, then took it from design through alpha and beta to adoption by every driver and their business managers. The closest thing to forward-deployed work I've done.",
+    how: "Forward-deployed with NASCAR's team for five years. Pitched a custom engagement leaderboard, then owned it from requirements through alpha and beta to adoption by every driver and their business managers, with NASCAR's own staff in the room for each iteration.",
   },
   {
     name: "Influencer external API",
@@ -171,7 +170,7 @@ export const career = [
   {
     when: "2025 to 2026",
     role: "Senior Product Leader, Teamworks",
-    text: "Owned Influencer and General Manager, together called NIL Ops, for 100,000+ users across 200+ athletic programs. Built GM from scratch. Moved the Influencer app into the Teamworks unified mobile app, shipped Ask Teamworks, and led the move off Rekognition to an in-house tagging model.",
+    text: "Product leader responsible for building the GM product offering from scratch and bringing it to 100+ organizations, while continuing to own Influencer across 200+ organizations and 100,000+ users. Moved the Influencer app into the Teamworks unified mobile app, shipped Ask Teamworks, and led the move off Rekognition to an in-house tagging model.",
   },
   {
     when: "Interim",
@@ -181,12 +180,17 @@ export const career = [
   {
     when: "2019 to 2024",
     role: "Director of Product, Influencer (INFLCR, then Teamworks)",
-    text: "Owned the mobile app from 2018 as it grew to 250K+ athletes and 200M+ photos. Picked up payments in 2021 as the only PM and built them into a product line that moved $500M+. Standardized the PRD template and the product, design, and engineering handoff.",
+    text: "Owned the mobile app from 2018 as it grew to 250K+ athletes and 200M+ photos. Took on payments in 2021 and built them into a product line that moved $500M+. Standardized the PRD template and the product, design, and engineering handoff.",
   },
   {
     when: "2018",
     role: "Customer Success, INFLCR",
     text: "Led the CS team before the Teamworks acquisition. It's still the lens I bring to product: what does the person on the other side of the screen need to get done today.",
+  },
+  {
+    when: "Summer 2017",
+    role: "Marketing Intern, Allegiant Athletic Agency (A3)",
+    text: "Knoxville sports agency for NFL players and golfers. Researched athlete sponsorships, cold-reached brands to set up partnerships, and supported agency events and community programs with the NFLPA and athlete foundations.",
   },
 ];
 

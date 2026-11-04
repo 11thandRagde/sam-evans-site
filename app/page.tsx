@@ -50,8 +50,8 @@ export default function Page() {
             Product leader in sports, payments, and everything in between.
           </h1>
           <p className="max-w-[58ch] text-title-3-regular text-text-secondary">
-            Seven years shipping at Teamworks: two product lines built from zero, payments that moved half a billion
-            dollars, and an AI assistant on top. Now co-founder of LiftFlow.
+            Seven years shipping at Teamworks: two product lines built from zero and payments that moved half a
+            billion dollars. Now co-founder of LiftFlow.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <ButtonLink href="#work">See the work</ButtonLink>

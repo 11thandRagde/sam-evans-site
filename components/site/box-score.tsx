@@ -55,7 +55,7 @@ export function BoxScore() {
   return (
     <dl
       aria-label="Career numbers"
-      className="grid grid-cols-2 gap-x-6 gap-y-6 rounded-3xl border border-border-button-default bg-background-primary-default p-6 shadow-card sm:grid-cols-3 lg:grid-cols-6"
+      className="grid grid-cols-2 gap-x-6 gap-y-6 rounded-3xl border border-border-button-default bg-background-primary-default p-6 shadow-card sm:grid-cols-3 lg:grid-cols-5"
     >
       {stats.map((s) => (
         <Stat key={s.label} {...s} />

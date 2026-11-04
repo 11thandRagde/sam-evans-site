@@ -11,7 +11,7 @@ import { site, work, career, howIWork, liftflow } from "@/app/content";
 const nav = [
   { href: "#work", label: "Work" },
   { href: "#career", label: "Career" },
-  { href: "#liftflow", label: "Liftflow" },
+  { href: "#liftflow", label: "LiftFlow" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -51,7 +51,7 @@ export default function Page() {
           </h1>
           <p className="max-w-[58ch] text-title-3-regular text-text-secondary">
             Seven years shipping at Teamworks: two product lines built from zero and payments that moved half a
-            billion dollars. Now co-founder of LiftFlow.
+            billion dollars.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <ButtonLink href="#work">See the work</ButtonLink>
@@ -131,17 +131,17 @@ export default function Page() {
             <Chip color="lime" variant="caption">
               Now
             </Chip>
-            <h2 className="roster-display mt-3 text-display-3-bold text-text-primary">Liftflow</h2>
+            <h2 className="roster-display mt-3 text-display-3-bold text-text-primary">LiftFlow</h2>
           </div>
           <p className="max-w-[60ch] text-body-regular text-text-secondary lg:self-end">
             Service management software for independent elevator maintenance companies. Most of them run on
-            spreadsheets, paper tickets, and QuickBooks. Liftflow puts scheduling, field work, quoting, invoicing, and
+            spreadsheets, paper tickets, and QuickBooks. LiftFlow puts scheduling, field work, quoting, invoicing, and
             customer records in one system, with a mobile app for mechanics. I co-founded it and run product and
             engineering.
           </p>
         </div>
         <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
-          <Table aria-label="What Liftflow does">
+          <Table aria-label="What LiftFlow does">
             <TableHeader>
               <TableColumn isRowHeader className="w-[28%]">
                 Workflow

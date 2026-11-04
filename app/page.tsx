@@ -191,7 +191,7 @@ export default function Page() {
         <div className="mb-8 grid gap-4 lg:grid-cols-[1fr_2fr]">
           <h2 className="roster-display text-display-3-bold text-text-primary">How I work</h2>
           <p className="max-w-[60ch] text-body-regular text-text-secondary lg:self-end">
-            Execution is my strength: getting features to GA, not just into a doc.
+            Execution is my strength: getting features to GA, not just into a doc or prompt.
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-3">

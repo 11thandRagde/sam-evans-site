@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { RiMailLine, RiLinkedinBoxLine, RiGithubLine, RiFileTextLine } from "@remixicon/react";
+import { RiMailLine, RiLinkedinBoxLine, RiGithubLine } from "@remixicon/react";
 import { ButtonLink } from "@/components/base/buttons/button";
 import { Chip } from "@/components/base/badges/chip";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@/components/base/table/table";
@@ -219,9 +219,6 @@ export default function Page() {
             </ButtonLink>
             <ButtonLink href={site.github} variant="secondary" leadingIcon={RiGithubLine}>
               GitHub
-            </ButtonLink>
-            <ButtonLink href={site.resume} variant="secondary" leadingIcon={RiFileTextLine}>
-              Resume
             </ButtonLink>
           </div>
         </div>

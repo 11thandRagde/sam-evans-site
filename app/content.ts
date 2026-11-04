@@ -5,7 +5,6 @@ export const site = {
   email: "sam21evans@gmail.com",
   linkedin: "https://www.linkedin.com/in/samevansbusiness",
   github: "https://github.com/11thandRagde",
-  resume: "/Sam-Evans-Resume.pdf",
   location: "Seattle and Jacksonville",
 };
 

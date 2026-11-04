@@ -208,7 +208,7 @@ export default function Page() {
         <div className="mx-auto w-full max-w-6xl px-4 py-20">
           <h2 className="roster-display text-display-2-bold text-text-primary">Let&apos;s talk.</h2>
           <p className="mt-3 max-w-[52ch] text-title-3-regular text-text-secondary">
-            {site.location}. Open to senior product roles, in sports and out.
+            After seven years building in sports tech, looking for the next hard problem to solve. Payments and sports tech first, but open.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <ButtonLink href={`mailto:${site.email}`} leadingIcon={RiMailLine}>

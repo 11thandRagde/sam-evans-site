@@ -69,18 +69,6 @@ export const lineup: {
       "GM started as an empty roadmap and became the budgeting and contract tool athletic departments use to plan NIL compensation across multiple years. I owned it from the first spec through launch: scholarship agreements, cash-flow tracking, earnings benchmarks, and agent data inside every athlete profile.",
   },
   {
-    key: "ncaa",
-    accent: "#2563EB",
-    pos: "Compliance",
-    name: "NCAA",
-    logo: "/logos/ncaa.svg",
-    logoOnDark: false,
-    tag: "200+ programs",
-    title: "NCAA",
-    story:
-      "When the NCAA NIL Assist build slipped, I took over the requirements and brought it back on deadline. Around it I built the compliance ledger that staff at 200+ athletic programs use to track athlete NIL disclosures, flag deals, and message athletes, brands, and agents from one place.",
-  },
-  {
     key: "nascar",
     accent: "#EF4444",
     pos: "Driver program",
@@ -92,6 +80,18 @@ export const lineup: {
     title: "NASCAR Driver Incentive Program",
     story:
       "Forward-deployed with NASCAR's team for five years. Pitched a custom engagement leaderboard and owned it from requirements through alpha and beta until every driver and their business managers were using it to track engagements and get paid.",
+  },
+  {
+    key: "ncaa",
+    accent: "#2563EB",
+    pos: "Compliance",
+    name: "NCAA",
+    logo: "/logos/ncaa.svg",
+    logoOnDark: false,
+    tag: "200+ programs",
+    title: "NCAA",
+    story:
+      "Owned requirements for the NCAA NIL Assist build and delivered it on the NCAA's timeline. Around it I built the compliance ledger that staff at 200+ athletic programs use to track athlete NIL disclosures, flag deals, and message athletes, brands, and agents from one place.",
   },
   {
     key: "liftflow",
